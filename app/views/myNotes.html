@@ -1,0 +1,18 @@
+<div class="table-responsive" ng-controller="MainCtrl">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Note Title</th>
+        <th>Note Content</th>
+        <th>Delete?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="note in notes">
+        <td>{{note.noteTitle}}</td>
+        <td>{{note.noteContent}}</td>
+        <td><button type="button" class="btn btn-danger" ng-click="deleteNote($index)" aria-label="Delete">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

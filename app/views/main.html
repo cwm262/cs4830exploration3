@@ -1,0 +1,13 @@
+<form role="form" ng-controller="MainCtrl">
+  <p class="animate-show" ng-show="saveError">You must fill in both blanks to save</p>
+  <div class="form-group">
+    <label for="nTitle">Note Title: </label>
+    <input type="text" class="form-control" ng-model="nTitle">
+  </div>
+  <div class="form-group">
+    <label for="note">Your Note: </label>
+    <textarea class="form-control" ng-model="note" cols="40" rows="10"></textarea>
+  </div>
+  <button type="button" class="btn btn-success btn-md" ng-click="save()">Save Note</button>
+  <button type="button" class="btn btn-danger btn-md" ng-click="clear()">Clear Note</button>
+</form>
