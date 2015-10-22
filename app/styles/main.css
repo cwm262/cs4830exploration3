@@ -59,9 +59,20 @@ body {
   margin-top: 28px;
 }
 
-.animate-show.ng-hide.add, .animate-show.ng-hide.remove{
-  transition: ease 3s;
+.animate-show{
+  padding:10px;
+  margin:10px;
+  background:red;
 }
+
+.animate-show{
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide{
+  opacity:0;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

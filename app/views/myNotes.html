@@ -11,6 +11,7 @@
       <tr ng-repeat="note in notes">
         <td>{{note.noteTitle}}</td>
         <td>{{note.noteContent}}</td>
+        <td><button type="button" class="btn" ng-click="editNote($index)" aria-label="Edit">Edit</button></td>
         <td><button type="button" class="btn btn-danger" ng-click="deleteNote($index)" aria-label="Delete">X</button></td>
       </tr>
     </tbody>

@@ -8,7 +8,7 @@
  * Controller of the cs4830exploration3App
  */
 angular.module('cs4830exploration3App')
-  .controller('MainCtrl', function ($scope, localStorageService, $timeout) {
+  .controller('MainCtrl', function ($scope, localStorageService, $timeout, $location) {
 
     var storedNotes = localStorageService.get('notes');
 
@@ -43,5 +43,10 @@ angular.module('cs4830exploration3App')
 
     $scope.deleteNote = function(index){
       $scope.notes.splice(index, 1);
+    };
+
+    $scope.editNote = function(index){
+      $location.path('views/main.html');
+      $scope.nTitle.val = "BLARGH";
     };
   });
