@@ -1,5 +1,6 @@
 <div class="table-responsive" ng-controller="MainCtrl">
-  <table class="table">
+  <div class="jumbotron" ng-hide="toggleTblMsg">There's nothing to see here. Maybe try adding some notes?</div>
+  <table class="table" ng-show="toggleTable">
     <thead>
       <tr>
         <th>Note Title</th>
@@ -9,9 +10,8 @@
     </thead>
     <tbody>
       <tr ng-repeat="note in notes">
-        <td>{{note.noteTitle}}</td>
-        <td>{{note.noteContent}}</td>
-        <td><button type="button" class="btn" ng-click="editNote($index)" aria-label="Edit">Edit</button></td>
+        <td><a href="#" editable-text="note.noteTitle">{{note.noteTitle}}</td>
+        <td><a href="#" editable-text="note.noteContent">{{note.noteContent}}</td>
         <td><button type="button" class="btn btn-danger" ng-click="deleteNote($index)" aria-label="Delete">X</button></td>
       </tr>
     </tbody>

@@ -18,6 +18,11 @@ angular.module('cs4830exploration3App')
 
     $scope.saveError = false;
 
+    if($scope.notes.length > 0){
+      $scope.toggleTable = true;
+      $scope.toggleTblMsg = true;
+    };
+
     $scope.clear = function(){
       $scope.nTitle = "";
       $scope.note = "";
@@ -28,6 +33,7 @@ angular.module('cs4830exploration3App')
         $scope.notes.push({noteTitle : $scope.nTitle , noteContent : $scope.note});
         $scope.nTitle = "";
         $scope.note = "";
+        $location.path('/myNotes');
       }
       else{
         $scope.saveError = true;
@@ -43,10 +49,9 @@ angular.module('cs4830exploration3App')
 
     $scope.deleteNote = function(index){
       $scope.notes.splice(index, 1);
-    };
-
-    $scope.editNote = function(index){
-      $location.path('views/main.html');
-      $scope.nTitle.val = "BLARGH";
+      if($scope.notes.length == 0){
+        $scope.toggleTable = false;
+        $scope.toggleTblMsg = false;
+      };
     };
   });

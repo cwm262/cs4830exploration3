@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'xeditable'
   ])
   .config(function ($routeProvider) {
     $routeProvider
